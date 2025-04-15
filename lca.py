@@ -76,7 +76,7 @@ if __name__ == "__main__":
         obj.insert_into_bst(each)
         
     # Define nodes for which to find LCA
-    p_val = 70
+    p_val = 7
     q_val = 9
     p = obj.find(p_val)
     q = obj.find(q_val)

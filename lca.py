@@ -16,7 +16,7 @@ class BinarySearchTree:
         
     def recursive_insert_into_bst(self, node, val):
         
-        ''' Final insertion into the tree occurs after all the recursive calls have finished. '''
+        ''' Final Insertion into Tree after all the recuresive call ends '''
         if not node:
             return TreeNode(val)
         
@@ -65,6 +65,17 @@ class BinarySearchTree:
                     return node
             
         return None
+    
+    def print_all_nodes(self):
+        def in_order(node):
+            if node:
+                in_order(node.left)         # Step 1: Go left
+                print(node.val, end=" ")   # Step 2: Visit node
+                in_order(node.right)       # Step 3: Go right
+
+        print("All nodes in BST (in-order):")
+        in_order(self.root)                # Start from root
+        print()
         
 if __name__ == "__main__":
     
@@ -88,3 +99,5 @@ if __name__ == "__main__":
         print(f"The Lowest Common Ancestor of {p_val} and {q_val} is: {lca_node.val}")
     else:
         print("LCA not found.")
+        
+    obj.print_all_nodes()
